@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
-import roseLogo from "./Avatar/rose.jpg";
-import userLogo from "./Avatar/lisa.jpg";
-import generalLogo from "./Avatar/blackpink.jpg";
+import roseLogo from "../public/Avatar/rose.jpg";
+import userLogo from "../public/Avatar/lisa.jpg";
+import generalLogo from "../public/Avatar/blackpink.jpg";
 import { Icon} from '@iconify/react';
 import { MenuFoldOutlined, MenuUnfoldOutlined,SearchOutlined} from "@ant-design/icons";
 import Calculator from "./Calculator/Calculator";

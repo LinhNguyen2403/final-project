@@ -5,7 +5,7 @@ function LanguageSwitcher({lang, languages, onClick}) {
     function getFlag(lang) {
 
         return <Avatar size={24} shape="circle" 
-                src={`/src/LanguageSwitcher/flags/${lang}-16x16.png`}/>
+                src={`../public/flags/${lang}-16x16.png`}/>
     }
     // eslint-disable-next-line react/prop-types
     const menuItems = languages.map(item => ({
@@ -28,7 +28,7 @@ function LanguageSwitcher({lang, languages, onClick}) {
                         verticalAlign: "text-bottom",
                         border: '1px solid blue'
                     }}
-                    src={`/src/LanguageSwitcher/flags/${lang}-16x16.png`} />
+                    src={`../public/flags/${lang}-16x16.png`} />
                 <Text style={{
                     display: 'inline-block',
                     width: '3em',
