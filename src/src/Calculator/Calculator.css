@@ -1,0 +1,22 @@
+.Calculator {
+  width: 280px;
+}
+.CalcButton {
+  width: 70px;
+  height: 50px;
+}
+.Display {
+  height: 50px;
+  border: 1px solid #ccc;
+}
+.Display .operand {
+  height: 1.1em;
+  font-size: 1.5em;
+}
+.Display .result {
+  height: 1.1em;
+  text-align: right;
+  font-size: 1em;
+  font-style: italic;
+  color: green;
+}

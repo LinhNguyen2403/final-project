@@ -1,0 +1,23 @@
+h1, label {
+    text-align: center;
+}
+.input {
+    display: inline-block;
+    width: 300px;
+    line-height: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+input{
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 0;
+}
+label {
+    width: 200px;
+    float: left;
+}

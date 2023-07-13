@@ -1,0 +1,12 @@
+.block {
+  display: inline-block;
+  width: 200px;
+  padding: 5px;
+  font-weight: bold;
+}
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: end;
+}
