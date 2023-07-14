@@ -7,7 +7,7 @@ import generalLogo from "../public/Avatar/blackpink.jpg";
 import { Icon} from '@iconify/react';
 import { MenuFoldOutlined, MenuUnfoldOutlined,SearchOutlined} from "@ant-design/icons";
 import Calculator from "./Calculator/Calculator";
-import Chessboard from "./Chessboard/Input/Input";
+import Chessboard from "./Chessboard/Input/Display";
 import ConvertRate from "./ConvertRate/ConvertRate";
 import Pomodoro from "./Pomodoro/Pomodoro";
 import LanguageSwitcher from './LanguageSwitcher'
@@ -40,7 +40,7 @@ const App = () => {
       label: <Link to="/Pomodoro">{Language('Pomodoro',lang)}</Link>,
       key: "/Pomodoro",
       icon: <Icon icon="game-icons:time-trap" />,
-    },
+    }
   ];
   return (
     <BrowserRouter>
@@ -54,12 +54,12 @@ const App = () => {
           width={300}
         >
           {!collapsed ? (
-            <Header className="my-header" style={{ background: "transparent" }}>
-              <Avatar src={generalLogo} size={50}></Avatar>
+            <Header className="my-header" style={{ background: "transparent", display:'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <Avatar src={generalLogo} size={40}></Avatar>
               <p style={{ padding: 10 }}>{Language('FINAL PROJECT',lang)}</p>
             </Header>
           ) : (
-            <Header className="my-header">
+            <Header className="my-header" style={{ background: "transparent", display:'flex', alignItems: 'center', justifyContent: 'center'}}>
               <Avatar src={roseLogo} size={50}></Avatar>
             </Header>
           )}
@@ -67,21 +67,23 @@ const App = () => {
             className="menu-sider"
             theme="light"
             mode="inline"
-            style={{ background: "transparent", fontSize: 18, color: "white" }}
+            style={{ background: "transparent", fontSize: 18, color: "white", marginTop:20 }}
             items={items}
           />
         </Sider>
         <Layout>
-          <Header className="my-header" style={{ background: "#fff" }}>
-            <Button
-              type="text"
-              icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-              onClick={() => setCollapsed(!collapsed)}
-            />
+          <Header className="my-header" style={{ background: "#fff",display:'flex', alignItems: 'center'}}>
+            <div>
+                <Button
+                  type="text"
+                  icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                  onClick={() => setCollapsed(!collapsed)}
+                />
+            </div>
             <Input
               prefix={<SearchOutlined style={{ color: "#ccc" }} />}
               placeholder="Search"
-              style={{ flex: 1, marginRight:20 }}
+              style={{ flex: 1, marginRight:20, maxHeight: 35,alignItems: 'center'}}
             />
             <LanguageSwitcher 
               lang={lang}

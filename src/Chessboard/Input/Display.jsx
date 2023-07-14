@@ -3,7 +3,7 @@ import ChessBoard from "../ChessBoard/ChessBoard";
 import "./Input.css";
 import { SettingFilled } from "@ant-design/icons";
 import { Button,Modal } from "antd";
-function Input() {
+function Display() {
   const [value, setValue] = useState(5);
   const [colorEven, setColorEven] = useState("#000000");
   const [colorOdd, setColorOdd] = useState("#ffc0cb");
@@ -42,8 +42,8 @@ function Input() {
         onCancel={() => handleCancel()}
       >
         <div>
-          <label>Flexible Size</label>
-          <input onChange={getSize} type="number" />
+          <label style={{maginTop:3}}>Flexible Size</label>
+          <input onChange={getSize} value={value} type="number"></input>
         </div>
         <div>
           <label>Set Color 1</label>
@@ -60,4 +60,4 @@ function Input() {
     </>
   );
 }
-export default Input;
+export default Display;

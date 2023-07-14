@@ -8,10 +8,6 @@
     font-size: 18px;
     font-weight: bold;
     height: 64px;
-    display: flex;
-    flex-wrap:wrap;
-    align-items: center;
-    justify-content: center;
     color: aliceblue;
 }  
 .menu-sider:hover {

@@ -48,6 +48,7 @@ function App() {
               setSecond(0);
               setMode("Short-Break");
               setPause(!pause);
+              
             } else if (mode === "Short-Break") {
               setMinute(inputLongBreak);
               setSecond(0);
@@ -87,7 +88,7 @@ function App() {
       <Space
         direction="vertical"
         style={{ alignItems: "center", borderRadius:10,
-        backgroundColor: `rgba(240, 240, 240, 0.2)`, height:"50vh",
+        backgroundColor: `rgba(240, 240, 240, 0.2)`, height:300,
         position: 'relative'}}
       >
         <Tooltip placement="rightTop" title={setting  }>

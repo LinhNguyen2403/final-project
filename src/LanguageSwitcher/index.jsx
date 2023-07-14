@@ -22,7 +22,7 @@ function LanguageSwitcher({lang, languages, onClick}) {
                 onClick: ({key}) => onClick(key)
             }}>
             <div style={{cursor: "pointer"}}>
-                <Avatar size={16} shape="circle" 
+                <Avatar size={24} shape="circle" 
                     style={{
                         marginRight: 10, 
                         verticalAlign: "text-bottom",

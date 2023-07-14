@@ -8,11 +8,12 @@ function App() {
   const [output, setOutput] = useState(0);
   const [unitFrom, setUnitFrom] = useState("VND");
   const [unitConvert, setUnitConvert] = useState("USD");
-
+  const [prefix1, setPrifix] = useState("₫")
   const rates2USD = {
     VND: 1 / 23600,
     USD: 1,
     EUR: 1.096,
+    JYP: 0.007,
   };
 
   function getInput(value) {
@@ -26,7 +27,6 @@ function App() {
 
   }
   function getExchangeRate(inMoney, outMoney) {
-    // inMoney ==> inMoneyUSD ; outMoney ==> outMoneyUSD
     let inMoneyUSD = getUSDRate(inMoney);
     let outMoneyUSD = getUSDRate(outMoney);
     return outMoneyUSD / inMoneyUSD;
@@ -46,7 +46,9 @@ function App() {
           <Space style={{ width: "100%", display:'flex', justifyContent:'center', alignItems:"end" }}>
             <div className="block" style={{size: 100}}>
               <div className="block-label">Amount</div>
-              <InputNumber min="0" onChange={getInput} value={input} style={{width:200}}/>
+              <InputNumber min="0" onChange={()=>{getInput(input);setPrifix(prefix1)}} value={input} style={{width:200}} 
+              prefix={unitFrom=="USD"?"$":(unitFrom=="VND"?"₫":(unitFrom=="EUR"?"€":"¥"))}>
+              </InputNumber>
             </div>
             <div className="block">
               <div className="block-label">From</div>
@@ -54,9 +56,10 @@ function App() {
                 <Select
                   defaultValue={unitFrom}
                   options={[
-                    { label: "USD", value: "USD" },
-                    { label: "VND", value: "VND" },
-                    { label: "EUR", value: "EUR" },
+                    { label: "$ USD", value: "USD"},
+                    { label: "₫ VND", value: "VND"},
+                    { label: "€ EUR", value: "EUR"},
+                    { label: "¥ JYP", value: "JYP"},
                   ]}
                   onChange={(value) => {
                     setUnitFrom(value);
@@ -74,21 +77,20 @@ function App() {
             <div className="block">
               <div className="block-label">To</div>
               <div>
-                <Select
+              <Select
                   defaultValue={unitConvert}
                   options={[
-                    { label: "USD", value: "USD" },
-                    { label: "VND", value: "VND" },
-                    { label: "EUR", value: "EUR" },
+                    { label: "$ USD", value: "USD" },
+                    { label: "₫ VND", value: "VND" },
+                    { label: "€ EUR", value: "EUR" },
+                    { label: "¥ JYP", value: "JYP" },
                   ]}
                   onChange={(value) => {
-                    setUnitConvert(value);
+                    setUnitFrom(value);
                   }}
                   value={unitConvert}
                   style={{ width: "100%" }}
-                >
-                  <Space>{unitConvert}</Space>
-                </Select>
+                />
               </div>
             </div>
           </Space>
